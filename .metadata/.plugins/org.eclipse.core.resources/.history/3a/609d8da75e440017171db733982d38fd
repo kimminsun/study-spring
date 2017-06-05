@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="exam.test.SingerMapper1">
+
+<select id="getSinger" resultType="mybatisExam.Singer">
+
+	select * from singer_group where name=#{name}
+</select>
+
+<select id="insertSinger">
+	insert into singer_group(name,member) values(#{name},#{member})
+</select>
+
+<select id="getSingers" resultType="mybatisExam.Singer">
+	select * from singer_group where member=#{member}
+	
+
+</select>
+<select id="updateSinger">
+	update singer_group set member=#{member} where name=#{name}
+</select>
+</mapper>

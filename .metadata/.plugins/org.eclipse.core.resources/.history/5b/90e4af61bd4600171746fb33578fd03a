@@ -1,0 +1,12 @@
+package myaop;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.GenericApplicationContext;
+
+public class AopTest {
+	public static void main(String[] args) {
+		ApplicationContext ctx=new GenericApplicationContext();
+		MessageBean bean=ctx.getBean("messagebean",MessageBean.class);
+		bean.sayHello();
+	}
+}
