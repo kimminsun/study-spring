@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;MemberDAOImpl.java&apos; to &apos;member/src/main/java/org.zerock.persistence&apos;&#x0D;&#x0A;- Original project: &apos;member&apos;&#x0D;&#x0A;- Destination element: &apos;member/src/main/java/org.zerock.persistence&apos;&#x0D;&#x0A;- Original element: &apos;MemberDAOImpl.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src\/main\/java&lt;org.zerock.persistence" element1="/src\/main\/java&lt;{MemberDAOImpl.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1497953613778" units="1" version="1.0"/>
+</session>
