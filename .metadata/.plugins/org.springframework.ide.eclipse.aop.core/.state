@@ -7,5 +7,7 @@
 <aop-project name="Day18"/>
 <aop-project name="Day19"/>
 <aop-project name="Day20"/>
+<aop-project name="Day21"/>
+<aop-project name="test"/>
 <aop-project name="member"/>
 </aop-reference-model>

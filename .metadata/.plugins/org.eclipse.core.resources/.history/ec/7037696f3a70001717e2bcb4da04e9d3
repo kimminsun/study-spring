@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybaits-3-mapper.dtd">
+	
+	<!-- 다른 mapper와 중복되지 않도록 네임스페이스 적도록 하자  -->
+	<mapper namespace="member">
+		<select id="memberList" resultType="com.example.project.model.dto.MemberVO">
+		
+		
+		select
+			user_id AS userid,
+			user_name AS username,
+			user_email AS email,
+			user_regdate AS regdate
+		from tbl_member
+		order by userName
+		
+		</select>
+	
+	
+	
+	
+	
+	</mapper>
