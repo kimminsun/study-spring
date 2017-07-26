@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybaits-3-mapper.dtd">
+	
+	<!-- 다른 mapper와 중복되지 않도록 네임스페이스 적도록 하자  -->
+	<mapper namespace="member">
+	<!-- 01. 회원 목록 쿼리문 -->
+		<select id="memberList" resultType="com.example.project.model.dto.MemberVO">
+		
+		
+		select
+			user_id AS userId,
+			user_name AS userName,
+			user_email AS userEmail,
+			user_regdate AS userRegdate
+		from tbl_member
+		order by user_name
+		
+		</select>
+	<!-- 02 . 회원 등록 쿼리문 -->
+	
+	<insert id="insertMember">
+		insert into tbl_member(user_id,user_pw,user_name,user_email)
+		values(#{userId},#{userPw},#{userName},#{userEmail})
+	
+	
+	</insert>
+	
+	<!-- 03 . 회원 정보 상세 보기 -->
+	<select id="viewMember" resultType="com.example.project.model.dto.MemberVO">
+		select
+			user_id AS userId,
+			user_name AS userName,
+			user_email AS userEmail,
+			user_regdate AS userRegdate,
+			user_regdate AS userUpdatedate
+		from tbl_member
+		where user_id=#{userId}
+	
+	
+	
+	
+	</select>
+	
+	
+	
+	
+	</mapper>

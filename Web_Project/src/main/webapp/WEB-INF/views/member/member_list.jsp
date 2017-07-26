@@ -1,28 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>È¸¿ø ¸ñ·Ï</title>
-<!-- <%@ include file="../include/member_header.jsp" %>-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>íšŒì› ëª©ë¡</title>
+ <%@ include file="../include/member_header.jsp" %>
 </head>
 <body>
-<!-- <%@ include file="../include/member_menu.jsp" %>-->
-<h2>È¸¿ø ¸ñ·Ï</h2>
+<%@ include file="../include/member_menu.jsp" %>
+<h2>íšŒì› ëª©ë¡</h2>
+
+<input type="button" value="íšŒì›ë“±ë¡" onclick="location.href='${path}/member/write.do'">
 <table border="1" width="700px">
 	<tr>
-		<th>¾ÆÀÌµğ</th>
-		<th>ÀÌ¸§</th>
-		<th>ÀÌ¸ŞÀÏ</th>
-		<th>È¸¿ø °¡ÀÔ ÀÏÀÚ</th>
+		<th>ì•„ì´ë””</th>
+		<th>ì´ë¦„</th>
+		<th>ì´ë©”ì¼</th>
+		<th>íšŒì› ê°€ì… ì¼ì</th>
 	</tr>
 	<c:forEach var="row" items="${list }">
 	<tr>
-		<td> ${row.userid }</td>
-		<td> ${row.username }</td>
-		<td> ${row.email }</td>
-		<td> ${row.regdate }</td>
+		<td> ${row.userId }</td>
+		<!-- íšŒì›ì •ë³´ë¥¼ ë³´ê¸° ìœ„í•´ì„œ aíƒœê·¸ë¥¼ ì¶”ê°€í•´ ë³´ì. -->
+		<td><a href="${path}/member/view.do?userId=${row.userId}">${row.userName}</a></td>
+		<td> ${row.userEmail }</td>
+		<td> ${row.userRegdate }</td>
 	</tr>
 	</c:forEach>
 </table>

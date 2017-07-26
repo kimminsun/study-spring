@@ -1,0 +1,43 @@
+package com.example.project.controller;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.project.model.dto.MemberVO;
+import com.example.project.service.MemberService;
+
+@Controller
+public class MemberController {
+	@Inject
+	MemberService memberService;
+	
+	
+	//01.회원 목록
+	@RequestMapping("member/list.do")
+	public String memberList(Model model){
+		//controller->service-> dao 요청
+		List<MemberVO> list=memberService.memberList();
+		model.addAttribute("list",list);
+		return "member/member_list";
+	}
+	
+	//02. 회원 등록
+	@RequestMapping("member/write.do")
+	public String memberWrite(){
+		return "member/member_write";
+	}
+	
+	//02-01.회원 등록 처리 및 회원 목록으로 리다이렉트
+	@RequestMapping("member/insert.do")
+	public String memberInsert(@ModelAttribute MemberVO vo){
+		memberService.insertMember(vo);
+		return "redirect:/member/list.do";
+	}
+
+}
